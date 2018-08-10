@@ -12,6 +12,7 @@ pub type SectionHeadline = String;
 
 /// Information extracted from a doc comment
 #[derive(Debug, PartialEq, Eq, Clone, Hash)]
+#[cfg_attr(feature="deser", derive(Serialize, Deserialize))]
 pub struct DocBlock {
     /// First line
     pub teaser: String,
@@ -23,6 +24,7 @@ pub struct DocBlock {
 
 /// Documentation sections
 #[derive(Debug, PartialEq, Eq, Clone, Hash)]
+#[cfg_attr(feature="deser", derive(Serialize, Deserialize))]
 pub enum DocSection {
     /// Function parameters, mapping param name to docs
     Parameters(Vec<(Identifier, Documentation)>),

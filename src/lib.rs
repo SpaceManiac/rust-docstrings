@@ -10,6 +10,7 @@
 
 extern crate pulldown_cmark;
 #[macro_use] extern crate quick_error;
+#[cfg(feature="serde")] #[macro_use] extern crate serde_derive;
 
 use pulldown_cmark::Parser;
 use pulldown_cmark::Event;
